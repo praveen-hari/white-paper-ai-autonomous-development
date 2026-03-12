@@ -1,0 +1,82 @@
+site_name: Harnessing AI for Autonomous Software Development
+site_description: From AI Assistance to Autonomous Engineering Workflows — A Syncfusion White Paper
+site_author: Syncfusion
+copyright: "© 2026 Syncfusion, Inc. All rights reserved."
+
+docs_dir: docs
+site_dir: site
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  font:
+    text: Inter
+    code: Roboto Mono
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - toc.integrate
+    - search.suggest
+    - search.highlight
+    - content.tooltips
+
+extra:
+  social:
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/company/syncfusion
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/syncfusion
+    - icon: fontawesome/solid/globe
+      link: https://www.syncfusion.com
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - tables
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+
+nav:
+  - Cover: index.md
+  - "2. Executive Summary": executive-summary.md
+  - "3. Introduction": introduction.md
+  - "4. Evolution of Tools": evolution-of-tools.md
+  - "5. Limitations of AI Tools": limitations.md
+  - "6. Harnessing AI": harnessing-ai.md
+  - "7. Autonomous Workflows": autonomous-workflows.md
+  - "8. Architecture": architecture.md
+  - "9. Implementation": implementation.md
+  - "10. Organizational Benefits": benefits.md
+  - "11. Use Cases": use-cases.md
+  - "12. Future of AI in Software": future.md
+  - "13. Conclusion": conclusion.md
+  - References: references.md
