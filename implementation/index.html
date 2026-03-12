@@ -1,0 +1,1337 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="From AI Assistance to Autonomous Engineering Workflows — A Syncfusion White Paper">
+      
+      
+        <meta name="author" content="Syncfusion">
+      
+      
+      
+        <link rel="prev" href="../architecture/">
+      
+      
+        <link rel="next" href="../benefits/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+    
+    
+      
+        <title>9. Implementation - Harnessing AI for Autonomous Software Development</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#9-implementing-autonomous-development-platforms" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Harnessing AI for Autonomous Software Development" class="md-header__button md-logo" aria-label="Harnessing AI for Autonomous Software Development" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Harnessing AI for Autonomous Software Development
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              9. Implementation
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Cover
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../executive-summary/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  2. Executive Summary
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../introduction/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  3. Introduction
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../evolution-of-tools/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  4. Evolution of Tools
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../limitations/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  5. Limitations of AI Tools
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../harnessing-ai/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  6. Harnessing AI
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../autonomous-workflows/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  7. Autonomous Workflows
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../architecture/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  8. Architecture
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  9. Implementation
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../benefits/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  10. Organizational Benefits
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../use-cases/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  11. Use Cases
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../future/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  12. Future of AI in Software
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../conclusion/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  13. Conclusion
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../references/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  References
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Harnessing AI for Autonomous Software Development" class="md-nav__button md-logo" aria-label="Harnessing AI for Autonomous Software Development" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Harnessing AI for Autonomous Software Development
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cover
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../executive-summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Executive Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../evolution-of-tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Evolution of Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../limitations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Limitations of AI Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../harnessing-ai/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Harnessing AI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../autonomous-workflows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Autonomous Workflows
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Implementation
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Implementation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#91-from-architecture-to-deployment-the-implementation-challenge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1 From Architecture to Deployment: The Implementation Challenge
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#92-step-1-deploying-the-ai-development-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2 Step 1: Deploying the AI Development Environment
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#93-step-2-grounding-agents-with-configurable-standards-and-instructions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3 Step 2: Grounding Agents with Configurable Standards and Instructions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#94-step-3-deploying-autonomous-agent-capabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.4 Step 3: Deploying Autonomous Agent Capabilities
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#95-step-4-wiring-workflow-automation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.5 Step 4: Wiring Workflow Automation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#96-step-5-integrating-with-development-infrastructure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.6 Step 5: Integrating with Development Infrastructure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#97-governance-policy-and-audit-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.7 Governance, Policy, and Audit Setup
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#98-a-staged-implementation-roadmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.8 A Staged Implementation Roadmap
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../benefits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Organizational Benefits
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../use-cases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. Use Cases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../future/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. Future of AI in Software
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../conclusion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. Conclusion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../references/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    References
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="9-implementing-autonomous-development-platforms">9. Implementing Autonomous Development Platforms<a class="headerlink" href="#9-implementing-autonomous-development-platforms" title="Permanent link">&para;</a></h1>
+<h2 id="91-from-architecture-to-deployment-the-implementation-challenge">9.1 From Architecture to Deployment: The Implementation Challenge<a class="headerlink" href="#91-from-architecture-to-deployment-the-implementation-challenge" title="Permanent link">&para;</a></h2>
+<p>The architectural layers described in Section 8 represent the platform requirements for autonomous AI development at scale. They also represent a gap. Most engineering organizations today are not operating at that architecture — they are somewhere earlier in a progression that spans from AI tool adoption to autonomous workflow integration, with most teams concentrated in the first two stages.</p>
+<p>The implementation challenge is not primarily technical. The platforms, models, and protocols described in this whitepaper are available today, and most are accessible on standard developer or enterprise plans. The challenge is organizational: sequencing adoption correctly, building infrastructure prerequisites in the right order, and establishing governance and review culture before deploying capabilities that require them.</p>
+<p>This section describes the five-step implementation path that organizations are following in early 2026 to move from AI tool adoption to production autonomous workflows — along with the governance requirements and staged rollout model that make the progression sustainable.</p>
+<hr />
+<h2 id="92-step-1-deploying-the-ai-development-environment">9.2 Step 1: Deploying the AI Development Environment<a class="headerlink" href="#92-step-1-deploying-the-ai-development-environment" title="Permanent link">&para;</a></h2>
+<p>The starting point for every organization is the AI development environment: the coding workspace, model access, and enterprise policy controls that establish the foundation for everything that follows.</p>
+<p>As of early 2026, the primary enterprise-grade AI development environments are:</p>
+<table>
+<thead>
+<tr>
+<th>Platform</th>
+<th>Developer Surface</th>
+<th>Enterprise Controls</th>
+<th>Underlying Models</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>GitHub Copilot Enterprise</strong></td>
+<td>VS Code, JetBrains, Visual Studio, CLI, GitHub.com</td>
+<td>SSO, policy management, audit logs, model selection</td>
+<td>GPT-5.3-Codex, Claude Sonnet 4.6, Gemini 3.1 Pro</td>
+</tr>
+<tr>
+<td><strong>Google Antigravity</strong></td>
+<td>Antigravity IDE (web + desktop)</td>
+<td>Manager surface, shared knowledge base, permission tiers</td>
+<td>Gemini 3, Claude Sonnet 4.5, GPT-OSS</td>
+</tr>
+<tr>
+<td><strong>OpenAI Codex App</strong></td>
+<td>Web app, Codex CLI</td>
+<td>Team rules, permission configuration, audit logs</td>
+<td>GPT-5.3-Codex</td>
+</tr>
+<tr>
+<td><strong>Anthropic Claude Code</strong></td>
+<td>Terminal / CLI, IDE integrations</td>
+<td>CLAUDE.md configuration, permission controls</td>
+<td>Claude Sonnet 4.6</td>
+</tr>
+</tbody>
+</table>
+<p>Enterprise deployment at this stage involves four configuration decisions: identity integration (SSO/SAML), data policy (whether to allow the vendor to use prompts for model training — most enterprises opt out), model selection (which LLMs are permitted by organizational policy), and seat assignment (which teams or roles receive access, typically starting with platform engineers or early-adopter product teams).</p>
+<p>GitHub Copilot Business and Enterprise allow administrators to configure all of these through organization-level policy controls, with granular settings for which Copilot features are enabled and which models can be invoked. <em>(Source: GitHub Documentation, "About Copilot Coding Agent," 2026 — <a href="https://docs.github.com/en/copilot/using-github-copilot/coding-agent/about-copilot-coding-agent">docs.github.com</a>)</em></p>
+<p>The implementation risk at this stage is under-configuration: deploying AI tools without establishing data policies, audit logging, or model controls, and having to retrofit those governance decisions after the tools are already in active use across engineering teams.</p>
+<hr />
+<h2 id="93-step-2-grounding-agents-with-configurable-standards-and-instructions">9.3 Step 2: Grounding Agents with Configurable Standards and Instructions<a class="headerlink" href="#93-step-2-grounding-agents-with-configurable-standards-and-instructions" title="Permanent link">&para;</a></h2>
+<p>The single highest-leverage implementation step — and the one most often skipped — is encoding organizational context into the persistent instruction files that ground agents in the codebase, coding standards, and team conventions.</p>
+<p>Agents that operate without this grounding produce generic output that requires significant human editing to meet team standards. Agents that operate with accurate, current grounding produce output that is team-consistent, architecture-aware, and ready for review without remediation.</p>
+<p>Each major platform provides a mechanism for this:</p>
+<p><strong>AGENTS.md (GitHub Copilot Coding Agent).</strong> A Markdown file placed in the repository root, <code>docs/</code> directory, or <code>.github/</code> folder. The coding agent reads AGENTS.md before beginning any task, using it to understand the codebase structure, coding conventions, testing requirements, PR standards, and any workflow-specific instructions. AGENTS.md files can be repository-level (applying to a specific codebase) or organization-level (applying across all repositories with a fallback hierarchy). <em>(Source: GitHub Documentation, "About Copilot Coding Agent," 2026 — <a href="https://docs.github.com/en/copilot/using-github-copilot/coding-agent/about-copilot-coding-agent">docs.github.com</a>)</em></p>
+<p><strong>CLAUDE.md (Anthropic Claude Code).</strong> A project-specific instruction file that Claude Code reads on initialization, providing the agent with repository context, build commands, test procedures, coding style guides, and any project-specific constraints. CLAUDE.md persists across Claude Code sessions, so context is not re-specified at each invocation. <em>(Source: Anthropic, "Claude Code Overview," 2026 — <a href="https://docs.anthropic.com/en/docs/claude-code/overview">docs.anthropic.com</a>)</em></p>
+<p><strong>Antigravity Knowledge Base.</strong> Antigravity builds and maintains a persistent knowledge base populated across agent sessions — architecture decisions, component inventories, historical task resolutions, and coding standards. Unlike static files, the knowledge base evolves as agents complete tasks, ensuring subsequent agents benefit from prior work. <em>(Source: The Antigravity Team, "Introducing Google Antigravity," November 18, 2025 — <a href="https://antigravity.google/blog/introducing-google-antigravity">antigravity.google</a>)</em></p>
+<p>What these files contain matters as much as whether they exist. Effective grounding documents specify: the project's architecture patterns and component structure; the testing framework and coverage expectations; the PR creation conventions including title formats, description templates, and linked issue requirements; security practices such as input validation standards and dependency approval workflows; and any constraints the agent must respect — files or directories it should not modify, external systems it should not call, and thresholds above which it should escalate rather than proceed.</p>
+<hr />
+<h2 id="94-step-3-deploying-autonomous-agent-capabilities">9.4 Step 3: Deploying Autonomous Agent Capabilities<a class="headerlink" href="#94-step-3-deploying-autonomous-agent-capabilities" title="Permanent link">&para;</a></h2>
+<p>With the environment configured and grounding documents in place, the third step is deploying autonomous agent capabilities — starting with bounded, low-risk task categories and expanding as the team's review capacity and confidence mature.</p>
+<p><strong>GitHub Copilot Coding Agent</strong> can be activated on any repository where an administrator has enabled it. To assign a task, a developer opens a GitHub issue, writes the task description — which becomes the agent's goal — and assigns the issue to Copilot. The agent then reads the repository and AGENTS.md, plans the implementation steps, executes in a GitHub Actions sandbox running tests and modifying files, and opens a pull request with a description, the set of changes made, and links to the test run. The developer reviews the PR, comments on specific lines or requests changes, and the agent can update its implementation in response to review feedback without a new issue being created. <em>(Source: GitHub Documentation, "About Copilot Coding Agent," 2026 — <a href="https://docs.github.com/en/copilot/using-github-copilot/coding-agent/about-copilot-coding-agent">docs.github.com</a>)</em></p>
+<p><strong>OpenAI Codex App</strong> deploys as a parallel command center. Developers assign tasks through the Codex web UI or CLI, agents run in isolated threads, and all results surface as diffs for review. Multiple agents can operate on the same repository using separate worktrees, enabling parallel feature development without conflicts. <em>(Source: OpenAI, "Introducing the Codex App," February 2, 2026 — <a href="https://openai.com/index/introducing-the-codex-app/">openai.com</a>)</em></p>
+<p>The graduated deployment sequence that production teams follow:</p>
+<table>
+<thead>
+<tr>
+<th>Stage</th>
+<th>Task Category</th>
+<th>Examples</th>
+<th>Review Requirement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Initial</strong></td>
+<td>Low-risk, high-volume</td>
+<td>Test generation, documentation, code comments, issue labeling</td>
+<td>PR review before merge</td>
+</tr>
+<tr>
+<td><strong>Intermediate</strong></td>
+<td>Bounded feature work</td>
+<td>Bug fixes, small feature implementation, refactoring</td>
+<td>PR review + test run verification</td>
+</tr>
+<tr>
+<td><strong>Advanced</strong></td>
+<td>Multi-step autonomous tasks</td>
+<td>Full feature implementation, migration scripts, CI/CD pipeline updates</td>
+<td>PR review + security scan</td>
+</tr>
+<tr>
+<td><strong>Integrated</strong></td>
+<td>Event-driven autonomous responses</td>
+<td>CI failure remediation, dependency updates, deployment verification</td>
+<td>Async review with escalation gates</td>
+</tr>
+</tbody>
+</table>
+<p>By March 2026, 12,000+ organizations had enabled automatic AI code review by default on GitHub. Enterprise teams that embedded AI into mandatory review workflows — rather than treating it as optional tooling — reported substantially higher adoption and measurably faster delivery. WEX reported shipping approximately 30% more code after making AI code review the default across all repositories. <em>(Source: Gopu, R. &amp; Apirian, D., "60 Million Copilot Code Reviews and Counting," GitHub Blog, March 5, 2026 — <a href="https://github.blog/ai-and-ml/github-copilot/60-million-copilot-code-reviews-and-counting/">github.blog</a>)</em></p>
+<hr />
+<h2 id="95-step-4-wiring-workflow-automation">9.5 Step 4: Wiring Workflow Automation<a class="headerlink" href="#95-step-4-wiring-workflow-automation" title="Permanent link">&para;</a></h2>
+<p>The fourth implementation step moves from on-demand agent invocation to embedded workflow automation: agents that run on schedule, on event, or on CI trigger without a developer opening a tool.</p>
+<p><strong>GitHub Actions as the trigger surface.</strong> GitHub Copilot Coding Agent integrates natively with GitHub Actions, meaning any workflow event — a push to a branch, a CI failure, a pull request comment, a scheduled cron trigger — can invoke the agent programmatically. This is what makes agentic execution a first-class citizen of the CI/CD pipeline rather than a separate tool. The agent responds to the system's events, not to a developer's manual invocation.</p>
+<p><strong>OpenAI Automations.</strong> Automations are pre-configured agent tasks — combinations of instructions and Skills — that run on a defined schedule with results queued for human review. OpenAI's own engineering teams use Automations for: daily GitHub issue triage (categorizing, labeling, and assigning incoming issues), CI failure summarization (identifying patterns across failing test runs), release brief generation (summarizing changes across a sprint for stakeholder communication), and dependency health audits (checking for outdated or vulnerable dependencies and opening patch PRs). <em>(Source: OpenAI, "Introducing the Codex App," February 2, 2026 — <a href="https://openai.com/index/introducing-the-codex-app/">openai.com</a>)</em></p>
+<p><strong>Skills bundles.</strong> Skills extend agent reach across the tool ecosystem. The Figma Skill enables the agent to pull design specifications and implement pixel-accurate UI components. The Linear Skill connects to project management: reading sprint context, updating issue status, and creating new issues based on discovered work. The Vercel, Cloudflare, and Netlify Skills enable the agent to deploy completed features directly to staging and production environments. Skills are checked into repositories for team-wide sharing, making integration capabilities part of the codebase rather than personal developer configuration.</p>
+<hr />
+<h2 id="96-step-5-integrating-with-development-infrastructure">9.6 Step 5: Integrating with Development Infrastructure<a class="headerlink" href="#96-step-5-integrating-with-development-infrastructure" title="Permanent link">&para;</a></h2>
+<p>The fifth step — and the one that completes the transition from tool adoption to development infrastructure — is connecting autonomous workflows to the full software delivery lifecycle.</p>
+<p>The integration points that production teams are activating in early 2026:</p>
+<p><strong>Issue trackers.</strong> GitHub Issues and Linear receive agent-created tasks, status updates, and completion reports. Agents read issue context before beginning work and update issue state on completion, keeping project tracking synchronized with development activity without manual updates.</p>
+<p><strong>CI/CD pipelines.</strong> Beyond GitHub Actions, autonomous agents integrate with external CI systems through webhook triggers and API calls. An agent can be invoked on pipeline failure, investigate the error, propose a fix, and open a PR — all before a human engineer has reviewed the failure notification.</p>
+<p><strong>MCP server configuration for internal systems.</strong> For organizations with internal APIs, service registries, or proprietary databases, MCP server configuration is the integration mechanism that makes those systems accessible to agents at runtime. Each internal system exposed via an MCP server becomes a tool the agent can query — with permissioned access, audited queries, and no requirement to embed internal system knowledge in static prompts. Rather than encoding system state in prompts, the agent queries live reality through defined interfaces. <em>(Source: Davis, G., "The Era of 'AI as Text' Is Over," GitHub Blog, March 10, 2026 — <a href="https://github.blog/ai-and-ml/github-copilot/the-era-of-ai-as-text-is-over-execution-is-the-new-interface/">github.blog</a>)</em></p>
+<p><strong>Deployment platforms.</strong> The Skills integrations with Vercel, Cloudflare, and Netlify extend the agent's scope past the repository boundary: the agent that implements a feature can also deploy it to staging, run smoke tests, and open a deployment confirmation PR — closing the loop from implementation to production verification without requiring a separate manual deployment step.</p>
+<hr />
+<h2 id="97-governance-policy-and-audit-setup">9.7 Governance, Policy, and Audit Setup<a class="headerlink" href="#97-governance-policy-and-audit-setup" title="Permanent link">&para;</a></h2>
+<p>Implementation without governance is the failure pattern that creates organizational incidents and erodes confidence in autonomous workflows. Governance setup is not a final step — it is a precondition that must be in place before agents touch production systems.</p>
+<p>Three governance elements must be established before advancing past Stage 1 deployment:</p>
+<p><strong>Permission model configuration.</strong> Based on the risk-proportionate framework described in Section 7.6, the organization must define which actions agents can take without human approval, which require confirmation before execution, and which require explicit human initiation. This is configured through GitHub Copilot Enterprise policy controls, Codex team rules, or Antigravity permission tiers — platform-specific implementations of the same architectural principle.</p>
+<p><strong>Audit trail activation.</strong> All major enterprise platforms provide audit logging for agent activity. GitHub Copilot Enterprise logs model invocations, tool calls, and repository accesses at the organization level. GitHub Agentic Workflows log at every trust boundary: network activity, model request/response metadata, tool invocations at the MCP gateway, and environment variable accesses inside the agent container. The organizational requirement is to route these logs to the SIEM or audit system that already captures development activity, so agent actions appear in the same audit record as human actions — enabling end-to-end forensic reconstruction of any execution. <em>(Source: Cox, L. &amp; Zhou, J., "Under the Hood: Security Architecture of GitHub Agentic Workflows," GitHub Blog, March 9, 2026 — <a href="https://github.blog/ai-and-ml/generative-ai/under-the-hood-security-architecture-of-github-agentic-workflows/">github.blog</a>)</em></p>
+<p><strong>Review process definition.</strong> The team must define how AI-generated PRs are reviewed: who reviews them, what the checklist covers (correctness, test coverage, standards compliance, security), and what the escalation path is when a reviewer is uncertain. This is a process decision, not a tool configuration — and it must be made explicitly rather than inherited from the existing human PR review process, which was not designed for AI-generated output at volume.</p>
+<hr />
+<h2 id="98-a-staged-implementation-roadmap">9.8 A Staged Implementation Roadmap<a class="headerlink" href="#98-a-staged-implementation-roadmap" title="Permanent link">&para;</a></h2>
+<p>The implementation path described above is sequential by design. Each stage builds the prerequisites for the next. Organizations that skip stages — deploying autonomous agent capabilities before grounding documents are in place, or enabling workflow automation before governance is configured — typically encounter quality or governance problems that set back adoption rather than accelerating it.</p>
+<pre class="mermaid"><code>%%{init: {'theme': 'base', 'themeVariables': {'fontSize': '14px', 'fontFamily': 'Inter, sans-serif'}}}%%
+flowchart LR
+    S1(["Stage 1\nAI Environment\nDeployed"])
+    S2(["Stage 2\nAgent Context\nConfigured"])
+    S3(["Stage 3\nAutonomous Agents\nDeployed"])
+    S4(["Stage 4\nWorkflow\nAutomation Live"])
+    S5(["Stage 5\nFull SDLC\nIntegration"])
+
+    S1 --&gt; S2
+    S2 --&gt; S3
+    S3 --&gt; S4
+    S4 --&gt; S5
+
+    style S1 fill:#1565c0,color:#fff,stroke:none
+    style S2 fill:#1976d2,color:#fff,stroke:none
+    style S3 fill:#1e88e5,color:#fff,stroke:none
+    style S4 fill:#42a5f5,color:#fff,stroke:none
+    style S5 fill:#0d47a1,color:#fff,stroke:none</code></pre>
+<table>
+<thead>
+<tr>
+<th>Stage</th>
+<th>What Is Built</th>
+<th>Typical Timeline</th>
+<th>Key Risk If Skipped</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1. AI Environment</strong></td>
+<td>Seats, SSO, data policy, model selection, audit logging</td>
+<td>2–4 weeks</td>
+<td>No governance foundation for subsequent stages</td>
+</tr>
+<tr>
+<td><strong>2. Agent Context</strong></td>
+<td>AGENTS.md / CLAUDE.md, coding standards docs, architecture records, test suite health</td>
+<td>4–8 weeks</td>
+<td>Generic agent output requiring heavy remediation</td>
+</tr>
+<tr>
+<td><strong>3. Autonomous Agents</strong></td>
+<td>Coding agent activation, low-stakes task delegation, PR review process</td>
+<td>4–8 weeks</td>
+<td>Agent output quality problems without review culture</td>
+</tr>
+<tr>
+<td><strong>4. Workflow Automation</strong></td>
+<td>GitHub Actions triggers, Automations, Skills configuration</td>
+<td>2–4 weeks</td>
+<td>Manual overhead that eliminates throughput gains</td>
+</tr>
+<tr>
+<td><strong>5. SDLC Integration</strong></td>
+<td>Issue tracker sync, MCP server setup for internal systems, deployment Skills</td>
+<td>4–12 weeks</td>
+<td>Agents operating as standalone tools rather than as infrastructure</td>
+</tr>
+</tbody>
+</table>
+<p>The organizations that reach Stage 5 at scale are the ones that treated each stage as a deliberate checkpoint — investing in the context infrastructure, the governance configuration, and the review culture that makes autonomous workflows reliable, not just capable. The next section examines what those organizations gain when the implementation is complete.</p>
+<hr />
+<p><em>Previous: <a href="../architecture/">← 8. Architecture for AI-Driven Development Platforms</a></em>
+<em>Next: <a href="../benefits/">10. Organizational Benefits →</a></em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 Syncfusion, Inc. All rights reserved.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/company/syncfusion" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/syncfusion" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M459.4 151.7c.3 4.5.3 9.1.3 13.6 0 138.7-105.6 298.6-298.6 298.6-59.5 0-114.7-17.2-161.1-47.1 8.4 1 16.6 1.3 25.3 1.3 49.1 0 94.2-16.6 130.3-44.8-46.1-1-84.8-31.2-98.1-72.8 6.5 1 13 1.6 19.8 1.6 9.4 0 18.8-1.3 27.6-3.6-48.1-9.7-84.1-52-84.1-103v-1.3c14 7.8 30.2 12.7 47.4 13.3-28.3-18.8-46.8-51-46.8-87.4 0-19.5 5.2-37.4 14.3-53C87.4 130.8 165 172.4 252.1 176.9c-1.6-7.8-2.6-15.9-2.6-24C249.5 95.1 296.3 48 354.4 48c30.2 0 57.5 12.7 76.7 33.1 23.7-4.5 46.5-13.3 66.6-25.3-7.8 24.4-24.4 44.8-46.1 57.8 21.1-2.3 41.6-8.1 60.4-16.2-14.3 20.8-32.2 39.3-52.6 54.3"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.syncfusion.com" target="_blank" rel="noopener" title="www.syncfusion.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M351.9 280H161c2.9 64.5 17.2 123.9 37.5 167.4 11.4 24.5 23.7 41.8 35.1 52.4 11.2 10.5 18.9 12.2 22.9 12.2s11.7-1.7 22.9-12.2c11.4-10.6 23.7-28 35.1-52.4 20.3-43.5 34.6-102.9 37.5-167.4zm-191-48h190.9c-2.8-64.5-17.1-123.9-37.4-167.4-11.4-24.4-23.7-41.8-35.1-52.4C268.1 1.7 260.4 0 256.4 0s-11.7 1.7-22.9 12.2c-11.4 10.6-23.7 28-35.1 52.4-20.3 43.5-34.6 102.9-37.5 167.4m-48 0c3.5-85.6 25.6-165.1 57.9-217.3C78.7 47.3 10.9 131.2 1.5 232zM1.5 280c9.4 100.8 77.2 184.7 169.3 217.3-32.3-52.2-54.4-131.7-57.9-217.3zm398.4 0c-3.5 85.6-25.6 165.1-57.9 217.3 92.1-32.7 159.9-116.5 169.3-217.3zm111.4-48C501.9 131.2 434.1 47.3 342 14.7c32.3 52.2 54.4 131.7 57.9 217.3z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "toc.integrate", "search.suggest", "search.highlight", "content.tooltips"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
